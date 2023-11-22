@@ -1,0 +1,7 @@
+{% extends 'tz_app/base.html' %}
+{% block script_data %}
+{% for product in products %}
+{ "ID": {{ product.id }}, "Название": "{{ product.title }}", "Цена": {{ product.price }},
+"Количество": {{ product.amount }}, "Категория": "{{ product.category.get_all_parent_categories }}" },
+{% endfor %}
+{% endblock %}
